@@ -14,7 +14,10 @@
         android:theme="@style/Theme.StarterPatternDemo"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ReceiverActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SenderActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
