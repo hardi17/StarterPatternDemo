@@ -1,18 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SenderActivity">
+<layout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SenderActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello!!! Jana I am sending you some money. \n Enjoy Xmas"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textSize="18dp"
+            android:textColor="@color/purple_700"
+            android:layout_centerInParent="true"/>
+
+        <EditText
+            android:id="@+id/ed_amount"
+            android:padding="20dp"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter amount of money"
+            android:gravity="center"
+            android:layout_margin="12dp"
+            android:inputType="numberDecimal"
+            android:textColor="@color/teal_700"
+            android:layout_below="@id/tv_intro"/>
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/ed_amount"
+            android:layout_margin="12dp"
+            android:text="Send"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:padding="15dp"/>
+    </RelativeLayout>
+</layout>
