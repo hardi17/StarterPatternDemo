@@ -11,24 +11,50 @@ class SenderActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivitySenderBinding.inflate(layoutInflater)
+        binding = ActivitySenderBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        sendMoney()
-    }
 
-    override fun onResume() {
-        super.onResume()
-        binding.edAmount.text.clear()
-    }
+        binding.btnSend.setOnClickListener {
+            sendOrInfoMoney(true)
+        }
 
-    private fun sendMoney() {
-        binding.btnSend.setOnClickListener{
-            val money = binding.edAmount.text.toString().trim()
-            if(money.isNotEmpty()){
-                startActivity(ReceiverActivity.getStartIntent(this@SenderActivity,money))
-            }else{
-                Toast.makeText(this,"Please add some amount, Thank You!!!",Toast.LENGTH_SHORT).show()
-            }
+        binding.btnInfo.setOnClickListener {
+            sendOrInfoMoney(false)
         }
     }
+
+    private fun sendOrInfoMoney(isSend: Boolean) {
+        val money = binding.edAmount.text.toString().trim()
+        val senderName = binding.edSenderName.text.toString().trim()
+        val receiverName = binding.edReceiverName.text.toString().trim()
+        if (money.isNotEmpty() && senderName.isNotEmpty() && receiverName.isNotEmpty()) {
+            if (isSend) {
+                startActivity(
+                    ReceiverActivity.getStartIntent(
+                        this@SenderActivity,
+                        money,
+                        senderName,
+                        receiverName
+                    )
+                )
+            } else {
+                startActivity(
+                    MoneyTransferInfoActivity.getStartIntent(
+                        this@SenderActivity,
+                        money,
+                        senderName,
+                        receiverName,
+                        "1"
+                    )
+                )
+            }
+        } else {
+            Toast.makeText(
+                this,
+                "Please add some amount and details if you forgot, Thank You!!!",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
 }

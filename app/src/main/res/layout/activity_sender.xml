@@ -2,7 +2,6 @@
 <layout>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -10,38 +9,84 @@
 
         <TextView
             android:id="@+id/tv_intro"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello!!! Jana I am sending you some money. \n Enjoy Xmas"
+            android:text="Share love, send money  :-)"
             android:gravity="center"
             android:padding="15dp"
             android:textSize="18dp"
-            android:textColor="@color/purple_700"
-            android:layout_centerInParent="true"/>
+            android:textColor="@color/purple_700" />
 
         <EditText
-            android:id="@+id/ed_amount"
+            android:id="@+id/ed_sender_name"
             android:padding="20dp"
             android:layout_centerInParent="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter amount of money"
+            android:hint="Enter sender full name"
             android:gravity="center"
             android:layout_margin="12dp"
-            android:inputType="numberDecimal"
+            android:inputType="text"
+            android:singleLine="true"
             android:textColor="@color/teal_700"
             android:layout_below="@id/tv_intro"/>
 
-        <Button
-            android:id="@+id/btn_send"
-            android:layout_width="200dp"
+        <EditText
+            android:id="@+id/ed_receiver_name"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/ed_sender_name"
             android:layout_centerInParent="true"
-            android:layout_below="@+id/ed_amount"
             android:layout_margin="12dp"
-            android:text="Send"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:padding="15dp"/>
+            android:gravity="center"
+            android:hint="Enter receiver full name"
+            android:inputType="text"
+            android:singleLine="true"
+            android:padding="20dp"
+            android:textColor="@color/teal_700" />
+
+        <EditText
+            android:id="@+id/ed_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ed_receiver_name"
+            android:layout_centerInParent="true"
+            android:layout_margin="12dp"
+            android:gravity="center"
+            android:hint="Enter amount of money"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:padding="20dp"
+            android:textColor="@color/teal_700" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_below="@+id/ed_amount">
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_margin="12dp"
+                android:padding="15dp"/>
+
+            <Button
+                android:id="@+id/btn_Info"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Info"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_margin="12dp"
+                android:padding="15dp"/>
+
+        </LinearLayout>
     </RelativeLayout>
 </layout>
