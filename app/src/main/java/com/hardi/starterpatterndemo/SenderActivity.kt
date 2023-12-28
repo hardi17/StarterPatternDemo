@@ -18,7 +18,7 @@ class SenderActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        binding.edAmount.text = null
+        binding.edAmount.text.clear()
     }
 
     private fun sendMoney() {
