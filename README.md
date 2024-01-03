@@ -4,7 +4,7 @@ Using,
   - Starter pattern
 
 
-## Contributing to Learn to write good code in kotlin using starter pattern
+## Contributing to Learn writting good code in kotlin using starter pattern
 
 Just make pull request. You are in!
 
